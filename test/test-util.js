@@ -18,4 +18,12 @@ export const createTestUser = async () => {
             token: "test"
         }
     })
-}
+};
+
+export const getTestUser = async () => {
+    return prismaClient.user.findUnique({
+        where: {
+            username: 'test'
+        }
+    })
+};
