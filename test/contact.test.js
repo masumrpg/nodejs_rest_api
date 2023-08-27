@@ -73,6 +73,8 @@ describe('GET /api/contacts/:contactId', function () {
             .get("/api/contacts/" + testContact.id)
             .set('Authorization', 'test');
 
+        logger.error(result.error);
+
         expect(result.status).toBe(200);
         expect(result.body.data.id).toBe(testContact.id);
         expect(result.body.data.first_name).toBe(testContact.first_name);
