@@ -112,17 +112,21 @@ describe('PUT /api/contacts/:contactId', function () {
             .put('/api/contacts/' + testContact.id)
             .set('Authorization', 'test')
             .send({
-                first_name: "Eko",
-                last_name: "Khannedy",
-                email: "eko@pzn.com",
+                first_name: "Kuda",
+                last_name: "Liar",
+                email: "kuda@liar.com",
                 phone: "09999999"
             });
 
+        if (result.error) {
+            logger.error(result.error);
+        }
+
         expect(result.status).toBe(200);
         expect(result.body.data.id).toBe(testContact.id);
-        expect(result.body.data.first_name).toBe("Eko");
-        expect(result.body.data.last_name).toBe("Khannedy");
-        expect(result.body.data.email).toBe("eko@pzn.com");
+        expect(result.body.data.first_name).toBe("Kuda");
+        expect(result.body.data.last_name).toBe("Liar");
+        expect(result.body.data.email).toBe("kuda@liar.com");
         expect(result.body.data.phone).toBe("09999999");
     });
 
@@ -149,9 +153,9 @@ describe('PUT /api/contacts/:contactId', function () {
             .put('/api/contacts/' + (testContact.id + 1))
             .set('Authorization', 'test')
             .send({
-                first_name: "Eko",
-                last_name: "Khannedy",
-                email: "eko@pzn.com",
+                first_name: "Kuda",
+                last_name: "Liar",
+                email: "kuda@liar.com",
                 phone: "09999999"
             });
 
