@@ -258,7 +258,7 @@ describe('GET /api/contacts', function () {
         const result = await supertest(web)
             .get('/api/contacts')
             .query({
-                email: "test1"
+                email: "masumrpg1"
             })
             .set('Authorization', 'test');
 
@@ -275,7 +275,7 @@ describe('GET /api/contacts', function () {
         const result = await supertest(web)
             .get('/api/contacts')
             .query({
-                phone: "0809000001"
+                phone: "0877296477211"
             })
             .set('Authorization', 'test');
 
